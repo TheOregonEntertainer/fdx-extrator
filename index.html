@@ -38,10 +38,7 @@
     padding: 2rem 1rem;
   }
 
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-  }
+  .container { max-width: 720px; margin: 0 auto; }
 
   header {
     margin-bottom: 2.5rem;
@@ -49,163 +46,71 @@
     padding-bottom: 1.5rem;
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
-  }
+  .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
 
   .logo-mark {
-    width: 28px;
-    height: 28px;
-    background: var(--accent);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 28px; height: 28px; background: var(--accent);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
 
   .logo-mark svg { width: 16px; height: 16px; }
 
-  h1 {
-    font-family: var(--mono);
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--text);
-    letter-spacing: -0.02em;
-  }
-
-  .tagline {
-    font-size: 12px;
-    color: var(--text2);
-    font-family: var(--mono);
-  }
+  h1 { font-family: var(--mono); font-size: 16px; font-weight: 500; color: var(--text); letter-spacing: -0.02em; }
+  .tagline { font-size: 12px; color: var(--text2); font-family: var(--mono); }
 
   .section-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
   }
 
   textarea {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 12px;
-    padding: 12px;
-    resize: vertical;
-    outline: none;
-    transition: border-color 0.15s;
+    width: 100%; background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); color: var(--text); font-family: var(--mono);
+    font-size: 12px; padding: 12px; resize: vertical; outline: none; transition: border-color 0.15s;
   }
 
   textarea:focus { border-color: var(--border2); }
   textarea::placeholder { color: var(--text3); }
-
   #input { min-height: 200px; }
 
-  .hint {
-    font-size: 11px;
-    color: var(--text3);
-    font-family: var(--mono);
-    margin-top: 6px;
-  }
+  .hint { font-size: 11px; color: var(--text3); font-family: var(--mono); margin-top: 6px; }
+  .hint code { background: var(--surface2); padding: 1px 5px; border-radius: 3px; color: var(--text2); }
 
-  .hint code {
-    background: var(--surface2);
-    padding: 1px 5px;
-    border-radius: 3px;
-    color: var(--text2);
-  }
-
-  .btn-row {
-    display: flex;
-    gap: 8px;
-    margin: 14px 0 2rem;
-  }
+  .btn-row { display: flex; gap: 8px; margin: 14px 0 2rem; }
 
   button {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 8px 20px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border2);
-    background: transparent;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all 0.15s;
-    letter-spacing: 0.02em;
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    padding: 8px 0; border-radius: var(--radius); border: 1px solid var(--border2);
+    background: transparent; color: var(--text2); cursor: pointer;
+    transition: all 0.15s; letter-spacing: 0.02em; flex: 1;
   }
 
   button:hover { border-color: var(--text3); color: var(--text); }
 
   button.primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #0f0f0f;
-    font-weight: 500;
+    background: var(--accent); border-color: var(--accent); color: #0f0f0f; font-weight: 500;
   }
 
   button.primary:hover { background: var(--accent2); border-color: var(--accent2); }
 
   .output-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius2);
-    overflow: hidden;
-    margin-bottom: 2rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius2); overflow: hidden; margin-bottom: 2rem;
   }
 
   .output-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
+    display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+    border-bottom: 1px solid var(--border); background: var(--surface2);
   }
 
-  .output-status {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text2);
-    flex: 1;
-  }
-
+  .output-status { font-family: var(--mono); font-size: 11px; color: var(--text2); flex: 1; }
   .output-status.ready { color: var(--accent); }
 
-  .copy-btn {
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 4px 12px;
-    border-radius: 4px;
-    border: 1px solid var(--border2);
-    background: transparent;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .copy-btn.copied { border-color: var(--success); color: var(--success); }
+  .copied-msg { font-size: 11px; color: var(--success); font-family: var(--mono); display: none; }
 
   #tsv-output {
-    min-height: 60px;
-    border: none;
-    border-radius: 0;
-    background: var(--surface);
-    font-size: 11px;
-    color: var(--text2);
-    padding: 12px 14px;
+    min-height: 60px; border: none; border-radius: 0;
+    background: var(--surface); font-size: 11px; color: var(--text2); padding: 12px 14px;
   }
 
   #tsv-output:focus { border-color: transparent; }
@@ -213,56 +118,29 @@
   .results { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem; }
 
   .result-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius2);
-    overflow: hidden;
-    animation: fadeIn 0.2s ease;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius2); overflow: hidden; animation: fadeIn 0.2s ease;
   }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
   .card-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
+    display: flex; align-items: center; gap: 12px; padding: 12px 14px;
+    border-bottom: 1px solid var(--border); background: var(--surface2);
   }
 
   .avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #1e2a12;
-    border: 1px solid #3a5020;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-    flex-shrink: 0;
+    width: 36px; height: 36px; border-radius: 50%; background: #1e2a12;
+    border: 1px solid #3a5020; display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); flex-shrink: 0;
   }
 
-  .card-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-  }
+  .card-name { font-size: 14px; font-weight: 500; color: var(--text); }
 
-  .card-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
+  .card-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 
   .card-field {
-    padding: 10px 14px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    padding: 10px 14px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
   }
 
   .card-field:nth-child(even) { border-right: none; }
@@ -271,48 +149,17 @@
   .card-field.full:last-child { border-bottom: none; }
 
   .f-label {
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 500;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 3px;
+    font-family: var(--mono); font-size: 9px; font-weight: 500; color: var(--text3);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px;
   }
 
-  .f-value {
-    font-size: 13px;
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
+  .f-value { font-size: 13px; color: var(--text); display: flex; flex-direction: column; gap: 2px; }
   .f-value span { font-size: 12px; }
   .empty { color: var(--text3); font-style: italic; font-size: 12px; }
+  .count-line { font-family: var(--mono); font-size: 11px; color: var(--text3); margin-bottom: 10px; }
+  .error { font-family: var(--mono); font-size: 12px; color: var(--danger); padding: 8px 0; display: none; }
 
-  .count-line {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text3);
-    margin-bottom: 10px;
-  }
-
-  .error {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--danger);
-    padding: 8px 0;
-    display: none;
-  }
-
-  footer {
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text3);
-  }
+  footer { border-top: 1px solid var(--border); padding-top: 1.5rem; font-family: var(--mono); font-size: 11px; color: var(--text3); }
 </style>
 </head>
 <body>
@@ -338,8 +185,9 @@
   <p class="hint">Para múltiplos contatos, separe cada bloco com <code>---</code> em uma linha isolada.</p>
 
   <div class="btn-row">
-    <button class="primary" onclick="processar()">Extrair dados</button>
     <button onclick="limpar()">Limpar</button>
+    <button class="primary" onclick="processar()">Extrair dados</button>
+    <button onclick="copiarTSV()">Copiar</button>
   </div>
 
   <div id="error" class="error"></div>
@@ -348,7 +196,7 @@
   <div class="output-block">
     <div class="output-header">
       <span class="output-status" id="output-status">Aguardando extração...</span>
-      <button class="copy-btn" id="copy-btn" onclick="copiarTSV()">Copiar</button>
+      <span class="copied-msg" id="copied-msg">Copiado!</span>
     </div>
     <textarea id="tsv-output" readonly onclick="this.select()" placeholder="O resultado aparecerá aqui após a extração..."></textarea>
   </div>
@@ -462,10 +310,7 @@ function processar() {
 
   const container = document.getElementById('results');
   container.innerHTML = '';
-
-  if (parsed.length > 0) {
-    container.insertAdjacentHTML('beforeend', `<p class="count-line">${parsed.length} contato(s) processado(s)</p>`);
-  }
+  if (parsed.length > 0) container.insertAdjacentHTML('beforeend', `<p class="count-line">${parsed.length} contato(s) processado(s)</p>`);
 
   for (const p of parsed) {
     const tel = p.telefones.length ? p.telefones.map(t => `<span>${t}</span>`).join('') : '<span class="empty">não encontrado</span>';
@@ -507,10 +352,9 @@ function copiarTSV() {
   el.select();
   try {
     document.execCommand('copy');
-    const btn = document.getElementById('copy-btn');
-    btn.textContent = 'Copiado!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+    const msg = document.getElementById('copied-msg');
+    msg.style.display = 'inline';
+    setTimeout(() => { msg.style.display = 'none'; }, 2000);
   } catch(e) {}
 }
 
@@ -523,6 +367,7 @@ function limpar() {
   status.className = 'output-status';
   document.getElementById('error').style.display = 'none';
   parsed = [];
+  document.getElementById('input').focus();
 }
 </script>
 </body>
