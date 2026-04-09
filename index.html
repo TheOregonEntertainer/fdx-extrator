@@ -6,165 +6,61 @@
 <title>Extrator FDX Buscas</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap');
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #0f0f0f;
-    --surface: #1a1a1a;
-    --surface2: #222222;
-    --border: #2e2e2e;
-    --border2: #3a3a3a;
-    --text: #e8e8e8;
-    --text2: #888;
-    --text3: #555;
-    --accent: #c8f060;
-    --accent2: #a8d040;
-    --danger: #ff5f5f;
-    --success: #60f0a0;
-    --font: 'IBM Plex Sans', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-    --radius: 6px;
-    --radius2: 10px;
+    --bg: #0f0f0f; --surface: #1a1a1a; --surface2: #222222;
+    --border: #2e2e2e; --border2: #3a3a3a; --text: #e8e8e8;
+    --text2: #888; --text3: #555; --accent: #c8f060; --accent2: #a8d040;
+    --danger: #ff5f5f; --success: #60f0a0;
+    --font: 'IBM Plex Sans', sans-serif; --mono: 'IBM Plex Mono', monospace;
+    --radius: 6px; --radius2: 10px;
   }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 14px;
-    line-height: 1.6;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-  }
-
+  body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.6; min-height: 100vh; padding: 2rem 1rem; }
   .container { max-width: 720px; margin: 0 auto; }
-
-  header {
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1.5rem;
-  }
-
+  header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
   .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-
-  .logo-mark {
-    width: 28px; height: 28px; background: var(--accent);
-    border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-
+  .logo-mark { width: 28px; height: 28px; background: var(--accent); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .logo-mark svg { width: 16px; height: 16px; }
-
   h1 { font-family: var(--mono); font-size: 16px; font-weight: 500; color: var(--text); letter-spacing: -0.02em; }
   .tagline { font-size: 12px; color: var(--text2); font-family: var(--mono); }
-
-  .section-label {
-    font-family: var(--mono); font-size: 10px; font-weight: 500;
-    color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
-  }
-
-  textarea {
-    width: 100%; background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); color: var(--text); font-family: var(--mono);
-    font-size: 12px; padding: 12px; resize: vertical; outline: none; transition: border-color 0.15s;
-  }
-
+  .section-label { font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  textarea { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: var(--mono); font-size: 12px; padding: 12px; resize: vertical; outline: none; transition: border-color 0.15s; }
   textarea:focus { border-color: var(--border2); }
   textarea::placeholder { color: var(--text3); }
   #input { min-height: 200px; }
-
   .hint { font-size: 11px; color: var(--text3); font-family: var(--mono); margin-top: 6px; }
   .hint code { background: var(--surface2); padding: 1px 5px; border-radius: 3px; color: var(--text2); }
-
   .btn-row { display: flex; gap: 8px; margin: 14px 0 2rem; }
-
-  button {
-    font-family: var(--mono); font-size: 12px; font-weight: 500;
-    padding: 8px 0; border-radius: var(--radius); border: 1px solid var(--border2);
-    background: transparent; color: var(--text2); cursor: pointer;
-    transition: all 0.15s; letter-spacing: 0.02em; flex: 1;
-  }
-
-  button:hover { border-color: var(--text3); color: var(--text); }
-
-  button.primary {
-    background: var(--accent); border-color: var(--accent); color: #0f0f0f; font-weight: 500;
-  }
-
-  button.primary:hover { background: var(--accent2); border-color: var(--accent2); }
-
-  .output-block {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius2); overflow: hidden; margin-bottom: 2rem;
-  }
-
-  .output-header {
-    display: flex; align-items: center; gap: 10px; padding: 10px 14px;
-    border-bottom: 1px solid var(--border); background: var(--surface2);
-  }
-
+  .btn-row button { font-family: var(--mono); font-size: 12px; font-weight: 500; padding: 8px 0; border-radius: var(--radius); border: 1px solid var(--border2); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; flex: 1; }
+  .btn-row button:hover { border-color: var(--text3); color: var(--text); }
+  .btn-row button.primary { background: var(--accent); border-color: var(--accent); color: #0f0f0f; }
+  .btn-row button.primary:hover { background: var(--accent2); border-color: var(--accent2); }
+  .error { font-family: var(--mono); font-size: 12px; color: var(--danger); padding: 8px 0; display: none; }
+  .output-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius2); overflow: hidden; margin-bottom: 2rem; }
+  .output-header { display: flex; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--surface2); }
   .output-status { font-family: var(--mono); font-size: 11px; color: var(--text2); flex: 1; }
   .output-status.ready { color: var(--accent); }
-
-  .copied-msg { font-size: 11px; color: var(--success); font-family: var(--mono); display: none; }
-
-  #tsv-output {
-    min-height: 60px; border: none; border-radius: 0;
-    background: var(--surface); font-size: 11px; color: var(--text2); padding: 12px 14px;
-  }
-
-  #tsv-output:focus { border-color: transparent; }
-
+  #tsv-output { min-height: 60px; border: none; border-radius: 0; background: var(--surface); font-size: 11px; color: var(--text2); padding: 12px 14px; }
   .results { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem; }
-
-  .result-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius2); overflow: hidden; animation: fadeIn 0.2s ease;
-  }
-
+  .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius2); overflow: hidden; animation: fadeIn 0.2s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
-
-  .card-top {
-    display: flex; align-items: center; gap: 12px; padding: 12px 14px;
-    border-bottom: 1px solid var(--border); background: var(--surface2);
-  }
-
-  .avatar {
-    width: 36px; height: 36px; border-radius: 50%; background: #1e2a12;
-    border: 1px solid #3a5020; display: flex; align-items: center; justify-content: center;
-    font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); flex-shrink: 0;
-  }
-
+  .card-top { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-bottom: 1px solid var(--border); background: var(--surface2); }
+  .avatar { width: 36px; height: 36px; border-radius: 50%; background: #1e2a12; border: 1px solid #3a5020; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
   .card-name { font-size: 14px; font-weight: 500; color: var(--text); }
-
-  .card-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-
-  .card-field {
-    padding: 10px 14px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  }
-
+  .card-fields { display: grid; grid-template-columns: 1fr 1fr; }
+  .card-field { padding: 10px 14px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .card-field:nth-child(even) { border-right: none; }
-  .card-field.full { grid-column: 1 / -1; border-right: none; }
-  .card-field:last-child { border-bottom: none; }
-  .card-field.full:last-child { border-bottom: none; }
-
-  .f-label {
-    font-family: var(--mono); font-size: 9px; font-weight: 500; color: var(--text3);
-    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px;
-  }
-
+  .card-field.full { grid-column: 1 / -1; border-right: none; border-bottom: none; }
+  .f-label { font-family: var(--mono); font-size: 9px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
   .f-value { font-size: 13px; color: var(--text); display: flex; flex-direction: column; gap: 2px; }
   .f-value span { font-size: 12px; }
   .empty { color: var(--text3); font-style: italic; font-size: 12px; }
   .count-line { font-family: var(--mono); font-size: 11px; color: var(--text3); margin-bottom: 10px; }
-  .error { font-family: var(--mono); font-size: 12px; color: var(--danger); padding: 8px 0; display: none; }
-
   footer { border-top: 1px solid var(--border); padding-top: 1.5rem; font-family: var(--mono); font-size: 11px; color: var(--text3); }
 </style>
 </head>
 <body>
 <div class="container">
-
   <header>
     <div class="logo">
       <div class="logo-mark">
@@ -187,7 +83,7 @@
   <div class="btn-row">
     <button onclick="limpar()">Limpar</button>
     <button class="primary" onclick="processar()">Extrair dados</button>
-    <button onclick="copiarTSV()">Copiar <span id="copied-msg" style="color: var(--success); display:none;">✓</span></button>
+    <button onclick="copiarTSV()">Copiar <span id="copied-msg" style="color:var(--success);display:none;">✓</span></button>
   </div>
 
   <div id="error" class="error"></div>
@@ -203,7 +99,6 @@
   <div id="results" class="results"></div>
 
   <footer>fdx-extrator · Oregon Invest · 2026</footer>
-
 </div>
 
 <script>
@@ -241,7 +136,6 @@ function initials(nome) {
 function parseBloco(text) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
   const result = { nome: getVal(lines, 'NOME'), sexo: getVal(lines, 'SEXO'), renda: getVal(lines, 'RENDA'), telefones: [], emails: [], cidade: null };
-
   for (const l of lines) {
     const idx = l.indexOf(':');
     if (idx === -1) continue;
@@ -251,7 +145,6 @@ function parseBloco(text) {
       if (v && v !== 'SEM RESULTADO' && !result.telefones.includes(v)) result.telefones.push(v);
     }
   }
-
   const emailBlocos = [];
   let current = null;
   for (const l of lines) {
@@ -267,12 +160,10 @@ function parseBloco(text) {
     }
   }
   if (current) emailBlocos.push(current);
-
   let maxKey = -1;
   for (const b of emailBlocos) { if (b.dt && b.dt.key > maxKey) maxKey = b.dt.key; }
   const bestEmails = maxKey > -1 ? emailBlocos.filter(b => b.dt && b.dt.key === maxKey) : emailBlocos;
   result.emails = [...new Set(bestEmails.map(b => b.email))];
-
   const endBlocos = [];
   let cEnd = null;
   for (const l of lines) {
@@ -286,13 +177,11 @@ function parseBloco(text) {
     if (k === 'DT INCLUSÃO' && cEnd && !cEnd.dt) cEnd.dt = parseDate(v);
   }
   if (cEnd) endBlocos.push(cEnd);
-
   let maxEndKey = -1;
   for (const b of endBlocos) { if (b.dt && b.dt.key > maxEndKey) maxEndKey = b.dt.key; }
   const bestEnd = maxEndKey > -1 ? endBlocos.filter(b => b.dt && b.dt.key === maxEndKey) : endBlocos;
   const cidades = [...new Set(bestEnd.map(b => b.cidade).filter(Boolean))];
   result.cidade = cidades.length > 0 ? cidades.join(' / ') : null;
-
   return result;
 }
 
@@ -303,45 +192,31 @@ function processar() {
   const errEl = document.getElementById('error');
   errEl.style.display = 'none';
   if (!raw) { errEl.textContent = 'Cole algum dado antes de extrair.'; errEl.style.display = 'block'; return; }
-
   const blocos = raw.split(/\n---\n/).map(b => b.trim()).filter(Boolean);
   parsed = blocos.map(parseBloco);
-
   const container = document.getElementById('results');
   container.innerHTML = '';
-  if (parsed.length > 0) container.insertAdjacentHTML('beforeend', `<p class="count-line">${parsed.length} contato(s) processado(s)</p>`);
-
+  if (parsed.length > 0) container.insertAdjacentHTML('beforeend', '<p class="count-line">' + parsed.length + ' contato(s) processado(s)</p>');
   for (const p of parsed) {
-    const tel = p.telefones.length ? p.telefones.map(t => `<span>${t}</span>`).join('') : '<span class="empty">não encontrado</span>';
-    const email = p.emails.length ? p.emails.map(e => `<span>${e}</span>`).join('') : '<span class="empty">não encontrado</span>';
-    container.insertAdjacentHTML('beforeend', `
-      <div class="result-card">
-        <div class="card-top">
-          <div class="avatar">${initials(p.nome)}</div>
-          <div class="card-name">${p.nome || '—'}</div>
-        </div>
-        <div class="card-fields">
-          <div class="card-field"><div class="f-label">Sexo</div><div class="f-value">${p.sexo || '<span class="empty">—</span>'}</div></div>
-          <div class="card-field"><div class="f-label">Renda</div><div class="f-value">${p.renda ? 'R$ ' + parseFloat(p.renda).toLocaleString('pt-BR', {minimumFractionDigits:2}) : '<span class="empty">—</span>'}</div></div>
-          <div class="card-field"><div class="f-label">Telefone(s)</div><div class="f-value">${tel}</div></div>
-          <div class="card-field"><div class="f-label">Email(s)</div><div class="f-value">${email}</div></div>
-          <div class="card-field full"><div class="f-label">Cidade</div><div class="f-value">${p.cidade || '<span class="empty">—</span>'}</div></div>
-        </div>
-      </div>
-    `);
+    const tel = p.telefones.length ? p.telefones.map(t => '<span>' + t + '</span>').join('') : '<span class="empty">não encontrado</span>';
+    const email = p.emails.length ? p.emails.map(e => '<span>' + e + '</span>').join('') : '<span class="empty">não encontrado</span>';
+    container.insertAdjacentHTML('beforeend',
+      '<div class="result-card">' +
+        '<div class="card-top"><div class="avatar">' + initials(p.nome) + '</div><div class="card-name">' + (p.nome || '—') + '</div></div>' +
+        '<div class="card-fields">' +
+          '<div class="card-field"><div class="f-label">Sexo</div><div class="f-value">' + (p.sexo || '<span class="empty">—</span>') + '</div></div>' +
+          '<div class="card-field"><div class="f-label">Renda</div><div class="f-value">' + (p.renda ? 'R$ ' + parseFloat(p.renda).toLocaleString('pt-BR', {minimumFractionDigits:2}) : '<span class="empty">—</span>') + '</div></div>' +
+          '<div class="card-field"><div class="f-label">Telefone(s)</div><div class="f-value">' + tel + '</div></div>' +
+          '<div class="card-field"><div class="f-label">Email(s)</div><div class="f-value">' + email + '</div></div>' +
+          '<div class="card-field full"><div class="f-label">Cidade</div><div class="f-value">' + (p.cidade || '<span class="empty">—</span>') + '</div></div>' +
+        '</div>' +
+      '</div>'
+    );
   }
-
-  const rows = parsed.map(p => [
-    p.sexo || '',
-    p.renda || '',
-    p.telefones.join(' | '),
-    p.emails.join(' | '),
-    p.cidade || ''
-  ].join('\t'));
-
+  const rows = parsed.map(p => [p.sexo||'', p.renda||'', p.telefones.join(' | '), p.emails.join(' | '), p.cidade||''].join('\t'));
   document.getElementById('tsv-output').value = rows.join('\n');
   const status = document.getElementById('output-status');
-  status.textContent = `${parsed.length} contato(s) — pronto para colar no Sheets`;
+  status.textContent = parsed.length + ' contato(s) — pronto para colar no Sheets';
   status.className = 'output-status ready';
 }
 
