@@ -501,6 +501,7 @@ function processar() {
   const status = document.getElementById('output-status');
   status.textContent = `${parsed.length} contato(s) — pronto para colar no Sheets`;
   status.className = 'output-status ready';
+  copiarTSV();
 }
 
 function copiarTSV() {
