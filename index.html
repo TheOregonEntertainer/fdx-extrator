@@ -524,7 +524,11 @@ function limpar() {
   status.className = 'output-status';
   document.getElementById('error').style.display = 'none';
   parsed = [];
-  document.getElementById('input').focus();
+  const input = document.getElementById('input');
+  input.focus();
+  navigator.clipboard.readText().then(text => {
+    if (text) input.value = text;
+  }).catch(() => {});
 }
 </script>
 </body>
